@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            background: #0A0A0A;
+            color: #EAE0D5;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .test-section {
+            margin: 40px 0;
+            border: 2px solid #B8860B;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 500px;
+            border: 1px solid #B8860B;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .status {
+            color: #B8860B;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image Loading Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Hero Coffee Art</h2>
+        <img src="images/hero.png" alt="Hero Coffee" onload="document.getElementById('status1').textContent = 'LOADED'"
+            onerror="document.getElementById('status1').textContent = 'FAILED TO LOAD'">
+        <p class="status">Status: <span id="status1">Loading...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Coffee Beans (Our Story)</h2>
+        <img src="images/beans.png" alt="Coffee Beans"
+            onload="document.getElementById('status2').textContent = 'LOADED'"
+            onerror="document.getElementById('status2').textContent = 'FAILED TO LOAD'">
+        <p class="status">Status: <span id="status2">Loading...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Espresso</h2>
+        <img src="images/espresso.png" alt="Espresso" onload="document.getElementById('status3').textContent = 'LOADED'"
+            onerror="document.getElementById('status3').textContent = 'FAILED TO LOAD'">
+        <p class="status">Status: <span id="status3">Loading...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Cappuccino</h2>
+        <img src="images/cappuccino.png" alt="Cappuccino"
+            onload="document.getElementById('status4').textContent = 'LOADED'"
+            onerror="document.getElementById('status4').textContent = 'FAILED TO LOAD'">
+        <p class="status">Status: <span id="status4">Loading...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Cold Brew</h2>
+        <img src="images/coldbrew.png" alt="Cold Brew"
+            onload="document.getElementById('status5').textContent = 'LOADED'"
+            onerror="document.getElementById('status5').textContent = 'FAILED TO LOAD'">
+        <p class="status">Status: <span id="status5">Loading...</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>File Paths Check</h2>
+        <p>Current page URL: <span id="currentUrl"></span></p>
+        <p>Image path should resolve to: <span id="imagePath"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('currentUrl').textContent = window.location.href;
+        const testImg = document.querySelector('img');
+        document.getElementById('imagePath').textContent = testImg ? testImg.src : 'No image found';
+    </script>
+</body>
+
+</html>
